@@ -1,0 +1,15 @@
+<h2>Quote Bank</h2>
+
+<form (submit)="onSubmit()">
+  <input type="text" name="text" [(ngModel)]="quote.text">
+  <input type="text" name="author" [(ngModel)]="quote.author">
+  <input type="submit">
+</form>
+
+
+<h3 *ngFor="let quote of quotes; let i = index">
+  <p>{{ quote.text }}</p>
+  <p>author: {{ quote.author }}</p>
+  <p>{{ quote.rank }}</p><button (click)="upVote(i)">Upvote</button>
+  <button (click)="downVote(i)">Downvote</button>
+</h3>
